@@ -449,7 +449,7 @@ function App() {
         <div className="container">
                 
           <div className="footer-bottom">
-            <p>© 2025 Kalkulator Pajak Properti - Hitung Pajak Penghasilan</p>
+            <p>Kalkulator Pajak Properti - Hitung Pajak Penghasilan</p>
             <p>&copy; 2025 nuansalegal.id. All rights reserved.</p>
           </div>
         </div>
