@@ -63,16 +63,16 @@ function App() {
       let pphPenjual = 0;
       if (inputType === 'transaksi') {
         if (nilaiTransaksi > njop) {
-          pphPenjual = (nilaiTransaksi - njop) * 0.05;
+          pphPenjual = (nilaiTransaksi - njop) * 0.025;
         } else {
-          pphPenjual = nilaiTransaksi * 0.05;
+          pphPenjual = nilaiTransaksi * 0.025;
         }
       } else {
-        pphPenjual = njop * 0.05;
+        pphPenjual = njop * 0.025;
       }
 
       // Perhitungan Pajak Pembeli (BPHTB) - 5%
-      const bphtb = nilai * 0.05;
+      const bphtb = (nilai - 80000000) * 0.05;
 
       // Nilai Baku (Fixed Values)
       const sertipikat = 850000; // Pengecekan Sertifikat
