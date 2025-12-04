@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import './App.css';
 import LogoNuansaLegal from './assets/BKWhite_NuansaLegal.jpeg';
-import Benner from './assets/Benner.jpeg';
 
 function App() {
   const [inputType, setInputType] = useState('njop');
@@ -203,17 +202,6 @@ function App() {
       </header>
 
       <main className="main-content">
-        <div className="hero-section">
-          {/* <div className="container">
-              <div
-                className="hero-banner"
-                style={{ backgroundImage: `url(${Benner})` }}
-                role="img"
-                aria-label="Banner"
-              />
-            </div> */}
-        </div>
-
         <div className="container">
           <div className="calculator-card">
             <div className="input-section">
