@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './App.css';
 import LogoNuansaLegal from './assets/BKWhite_nuansaLegal.jpeg';
-import Benner from './assets/Benner.jpeg';
+
 
 function App() {
   const [inputType, setInputType] = useState('njop');
@@ -74,71 +74,62 @@ function App() {
       // Perhitungan Pajak Pembeli (BPHTB) - 5%
       const bphtb = nilai * 0.05;
 
-      // Pengecekan Sertipikat & PBB
-      const sertipikat = nilai * 0.001; // 0.1%
-
-      // Akta Jual Beli (1% dari NJOP)
-      const akta = njop > 0 ? njop * 0.01 : nilai * 0.01;
-
-      // Daftar Balik Nama
-      const balikNama = nilai * 0.002; // 0.2%
-
-      // Zona Nilai Tanah
-      const zona = nilai * 0.0015; // 0.15%
-
-      // Kas Negara BN
-      const kasNegara = nilai * 0.001; // 0.1%
-
-      // Validasi
-      const validasiValue = nilai * 0.0005; // 0.05%
+      // Nilai Baku (Fixed Values)
+      const sertipikat = 850000; // Pengecekan Sertifikat
+      const akta = 3500000; // Akta Jual Beli
+      const validasiValue = 1000000; // Validasi
+      const balikNama = 3000000; // Daftar Balik Nama
 
       setPajakPenjual(formatRupiah(pphPenjual.toFixed(0)));
       setPajakPembeli(formatRupiah(bphtb.toFixed(0)));
-      setPengecekanSertipikat(formatRupiah(sertipikat.toFixed(0)));
-      setAktaJualBeli(formatRupiah(akta.toFixed(0)));
-      setDaftarBalikNama(formatRupiah(balikNama.toFixed(0)));
-      setZonaNilaiTanah(formatRupiah(zona.toFixed(0)));
-      setKasNegaraBN(formatRupiah(kasNegara.toFixed(0)));
-      setValidasi(formatRupiah(validasiValue.toFixed(0)));
+      setPengecekanSertipikat(formatRupiah(sertipikat.toString()));
+      setAktaJualBeli(formatRupiah(akta.toString()));
+      setDaftarBalikNama(formatRupiah(balikNama.toString()));
+      setZonaNilaiTanah('Belum diketahui!');
+      setKasNegaraBN('Belum diketahui!');
+      setValidasi(formatRupiah(validasiValue.toString()));
     } else if (activeTab === 'waris') {
       // Perhitungan untuk Waris
       const pajakWarisValue = nilai * 0.025; // 2.5%
-      const zonaWaris = nilai * 0.0015;
-      const sertipikatWaris = nilai * 0.001;
-      const kasNegaraWaris = nilai * 0.001;
-      const balikNamaWarisValue = nilai * 0.002;
-      const validasiWarisValue = nilai * 0.0005;
+      
+      // Nilai Baku (Fixed Values)
+      const sertipikatWaris = 850000;
+      const validasiWarisValue = 1000000;
+      const balikNamaWarisValue = 3000000;
 
       setPajakWaris(formatRupiah(pajakWarisValue.toFixed(0)));
-      setZonaNilaiTanahWaris(formatRupiah(zonaWaris.toFixed(0)));
-      setPengecekanSertipikatWaris(formatRupiah(sertipikatWaris.toFixed(0)));
-      setKasNegaraBNWaris(formatRupiah(kasNegaraWaris.toFixed(0)));
-      setDaftarBalikNamaWaris(formatRupiah(balikNamaWarisValue.toFixed(0)));
-      setValidasiWaris(formatRupiah(validasiWarisValue.toFixed(0)));
+      setZonaNilaiTanahWaris('Belum diketahui!');
+      setPengecekanSertipikatWaris(formatRupiah(sertipikatWaris.toString()));
+      setKasNegaraBNWaris('Belum diketahui!');
+      setDaftarBalikNamaWaris(formatRupiah(balikNamaWarisValue.toString()));
+      setValidasiWaris(formatRupiah(validasiWarisValue.toString()));
     } else if (activeTab === 'hibah') {
       // Perhitungan untuk Hibah
       const pajakHibahValue = nilai * 0.05; // 5%
-      const kasNegaraHibahValue = nilai * 0.001;
-      const sertipikatHibahValue = nilai * 0.001;
-      const validasiHibahValue = nilai * 0.0005;
-      const aktaHibahValue = nilai * 0.01;
-      const zonaHibahValue = nilai * 0.0015;
-      const balikNamaHibahValue = nilai * 0.002;
-      const skbValue = nilai * 0.0008;
+      
+      // Nilai Baku (Fixed Values)
+      const sertipikatHibahValue = 850000;
+      const validasiHibahValue = 1000000;
+      const aktaHibahValue = 3500000;
+      const balikNamaHibahValue = 3000000;
 
       setPajakBalikNamaHibah(formatRupiah(pajakHibahValue.toFixed(0)));
-      setKasNegaraBNHibah(formatRupiah(kasNegaraHibahValue.toFixed(0)));
-      setPengecekanSertipikatHibah(formatRupiah(sertipikatHibahValue.toFixed(0)));
-      setValidasiHibah(formatRupiah(validasiHibahValue.toFixed(0)));
-      setAktaHibah(formatRupiah(aktaHibahValue.toFixed(0)));
-      setZonaNilaiTanahHibah(formatRupiah(zonaHibahValue.toFixed(0)));
-      setDaftarBalikNamaHibah(formatRupiah(balikNamaHibahValue.toFixed(0)));
-      setSkb(formatRupiah(skbValue.toFixed(0)));
+      setKasNegaraBNHibah('Belum diketahui!');
+      setPengecekanSertipikatHibah(formatRupiah(sertipikatHibahValue.toString()));
+      setValidasiHibah(formatRupiah(validasiHibahValue.toString()));
+      setAktaHibah(formatRupiah(aktaHibahValue.toString()));
+      setZonaNilaiTanahHibah('Belum diketahui!');
+      setDaftarBalikNamaHibah(formatRupiah(balikNamaHibahValue.toString()));
+      setSkb('Belum diketahui!');
     }
   };
 
   const calculateTotal = (type) => {
-    const parseValue = (str) => parseFloat(str.replace(/\./g, '')) || 0;
+    const parseValue = (str) => {
+      // Jika string adalah "Belum diketahui!", return 0
+      if (str === 'Belum diketahui!') return 0;
+      return parseFloat(str.replace(/\./g, '')) || 0;
+    };
     
     if (type === 'resmi') {
       if (activeTab === 'jual-beli') {
@@ -193,7 +184,7 @@ function App() {
       <header className="header">
         <div className="container">
           <div className="logo">
-            <img src={LogoNuansaLegal} alt="Nuansa Legal" />
+            <img src={LogoNuansaLegal} alt="Nuansa Legal" style={{ width: '98px', height: '98px', objectFit: 'contain' }} />
           </div>
           <div className="header-text">
             <h1>KALKULATOR PAJAK PROPERTI</h1>
@@ -203,6 +194,9 @@ function App() {
       </header>
 
       <main className="main-content">
+        <div className="hero-section">
+        </div>
+
         <div className="container">
           <div className="calculator-card">
             <div className="input-section">
@@ -435,7 +429,7 @@ function App() {
 
               <div className="disclaimer">
                 <h4>Disclaimer</h4>
-                <p>• Hasil perhitungan kalkulator diatas hanya sebagai gambaran besaran (kurang lebih) pajak dan biaya dapat diperkirakan untuk kepentingan jual beli, waris dan hibah tanah. Untuk hasil yang lebih akurat, Anda dapat melampirkan copy sertifikat, pbb dan bukti bayar tahun berjalan dan dokumen pendukung lainnya kepada tim IZIN.co.id.</p>
+                <p>• Hasil perhitungan kalkulator diatas hanya sebagai gambaran besaran (kurang lebih) pajak dan biaya dapat diperkirakan untuk kepentingan jual beli, waris dan hibah tanah. Untuk hasil yang lebih akurat, Anda dapat melampirkan copy sertifikat, pbb dan bukti bayar tahun berjalan dan dokumen pendukung lainnya kepada tim nuansalegal.id.</p>
                 <p>• Perhitungan Pajak Pembeli dan Penjual, Biaya Validasi, Zona Nilai Tanah dan Kas Negara Balik Nama merupakan biaya resmi yang akan disetorkan ke Negara. Bukti pembayaran atas pajak tersebut akan diserahkan kepada Klien bersama dengan dokumen sertipikat yang telah selesai.</p>
                 <p className="highlight">Perhitungan jual beli rumah tidak sebatas membayar biaya pembelian atau menerima uang pembelian, tetapi masih terdapat biaya-biaya lain yang harus Anda perhitungkan.</p>
                 <p>Posisi Anda sebagai pembeli atau penjual, keduanya akan dikenakan pajak. Jika Anda seorang penjual, maka Anda akan dikenakan pajak penghasilan (PPh) atas tanah dan rumah yang Anda jual. Sebagai pembeli Anda akan dikenakan Bea Perolehan Hak Atas Tanah dan Bangunan (BPHTB).</p>
@@ -447,7 +441,6 @@ function App() {
 
       <footer className="footer">
         <div className="container">
-                
           <div className="footer-bottom">
             <p>Kalkulator Pajak Properti - Hitung Pajak Penghasilan</p>
             <p>&copy; 2025 nuansalegal.id. All rights reserved.</p>

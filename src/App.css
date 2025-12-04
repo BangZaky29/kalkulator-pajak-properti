@@ -190,7 +190,7 @@ body {
   background: white;
   border-radius: 12px;
   padding: 22px 20px;
-  margin: 108px auto 0;
+  margin: -80px auto 0;
   position: relative;
   z-index: 2;
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
@@ -454,6 +454,12 @@ select:focus {
   font-weight: 600;
   color: #1f2937;
   cursor: default;
+}
+
+.form-field input[value="Belum diketahui!"] {
+  font-style: italic;
+  color: #666;
+  font-weight: 500;
 }
 
 .total-field {
