@@ -447,9 +447,10 @@ function App() {
 
       <footer className="footer">
         <div className="container">
-
+                
           <div className="footer-bottom">
-            <p>&copy; 2024 IZIN.co.id. All rights reserved.</p>
+            <p>© 2025 Kalkulator Pajak Properti - Hitung Pajak Penghasilan</p>
+            <p>&copy; 2025 nuansalegal.id. All rights reserved.</p>
           </div>
         </div>
       </footer>
