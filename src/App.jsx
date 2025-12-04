@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './App.css';
-import LogoNuansaLegal from './assets/BKWhite_NuansaLegal.jpeg';
+import LogoNuansaLegal from './assets/BKWhite_nuansaLegal.jpeg';
+import Benner from './assets/Benner.jpeg';
 
 function App() {
   const [inputType, setInputType] = useState('njop');
