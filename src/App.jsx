@@ -245,11 +245,11 @@ function App() {
               <div className="input-group">
                 <label>Lokasi</label>
                 <select value={location} onChange={(e) => setLocation(e.target.value)}>
-                  <option value="Jakarta">Jakarta</option>
-                  <option value="Bandung">Bandung</option>
-                  <option value="Surabaya">Surabaya</option>
-                  <option value="Medan">Medan</option>
-                  <option value="Semarang">Semarang</option>
+                  <option value="KABUPATEN BOGOR">KABUPATEN BOGOR</option>
+                  <option value="KOTA BOGOR">KOTA BOGOR</option>
+                  <option value="KABUPATEN BANDUNG BARAT">KABUPATEN BANDUNG BARAT</option>
+                  <option value="KABUPATEN SUMEDANG">KABUPATEN SUMEDANG</option>
+                  <option value="KOTA CILEGON">KOTA CILEGON</option>
                 </select>
               </div>
 
