@@ -97,7 +97,7 @@ function App() {
       const validasiWarisValue = 1000000;
       const balikNamaWarisValue = 3000000;
 
-      setPajakWaris(formatRupiah(pajakWarisValue.toFixed(0)));
+      setPajakWaris('Belum diketahui!');
       setZonaNilaiTanahWaris('Belum diketahui!');
       setPengecekanSertipikatWaris(formatRupiah(sertipikatWaris.toString()));
       setKasNegaraBNWaris('Belum diketahui!');
@@ -113,7 +113,7 @@ function App() {
       const aktaHibahValue = 3500000;
       const balikNamaHibahValue = 3000000;
 
-      setPajakBalikNamaHibah(formatRupiah(pajakHibahValue.toFixed(0)));
+      setPajakBalikNamaHibah('Belum diketahui!');
       setKasNegaraBNHibah('Belum diketahui!');
       setPengecekanSertipikatHibah(formatRupiah(sertipikatHibahValue.toString()));
       setValidasiHibah(formatRupiah(validasiHibahValue.toString()));
