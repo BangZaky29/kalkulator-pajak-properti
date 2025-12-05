@@ -546,7 +546,7 @@ select:focus {
 .note-column h4 {
   font-size: 16px;
   margin-bottom: 12px;
-  color: #2d6a4f;
+  color: #f59e0b;
   font-weight: 700;
 }
 
@@ -568,7 +568,7 @@ select:focus {
   content: '•';
   position: absolute;
   left: 0;
-  color: #2d6a4f;
+  color: #f59e0b;
   font-weight: bold;
   font-size: 18px;
 }
