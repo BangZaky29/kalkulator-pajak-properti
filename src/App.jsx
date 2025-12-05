@@ -124,58 +124,44 @@ function App() {
     }
   };
 
-  const calculateTotal = (type) => {
+  const calculateTotalPengurusan = () => {
     const parseValue = (str) => {
-      // Jika string adalah "Belum diketahui!", return 0
-      if (str === 'Belum diketahui!') return 0;
+      if (str === 'Belum diketahui!' || !str) return 0;
       return parseFloat(str.replace(/\./g, '')) || 0;
     };
     
-    if (type === 'resmi') {
-      if (activeTab === 'jual-beli') {
-        return formatRupiah((
-          parseValue(pajakPenjual) +
-          parseValue(pajakPembeli) +
-          parseValue(pengecekanSertipikat) +
-          parseValue(kasNegaraBN) +
-          parseValue(validasi)
-        ).toFixed(0));
-      } else if (activeTab === 'waris') {
-        return formatRupiah((
-          parseValue(pajakWaris) +
-          parseValue(pengecekanSertipikatWaris) +
-          parseValue(kasNegaraBNWaris) +
-          parseValue(validasiWaris)
-        ).toFixed(0));
-      } else if (activeTab === 'hibah') {
-        return formatRupiah((
-          parseValue(pajakBalikNamaHibah) +
-          parseValue(kasNegaraBNHibah) +
-          parseValue(pengecekanSertipikatHibah) +
-          parseValue(validasiHibah)
-        ).toFixed(0));
-      }
-    } else if (type === 'notaris') {
-      if (activeTab === 'jual-beli') {
-        return formatRupiah((
-          parseValue(aktaJualBeli) +
-          parseValue(daftarBalikNama) +
-          parseValue(zonaNilaiTanah)
-        ).toFixed(0));
-      } else if (activeTab === 'waris') {
-        return formatRupiah((
-          parseValue(zonaNilaiTanahWaris) +
-          parseValue(daftarBalikNamaWaris)
-        ).toFixed(0));
-      } else if (activeTab === 'hibah') {
-        return formatRupiah((
-          parseValue(aktaHibah) +
-          parseValue(zonaNilaiTanahHibah) +
-          parseValue(daftarBalikNamaHibah) +
-          parseValue(skb)
-        ).toFixed(0));
-      }
+    if (activeTab === 'jual-beli') {
+      // Total = Pajak Penjual + Pajak Pembeli + Pengecekan Sertipikat + Akta Jual Beli + Daftar Balik Nama + Validasi
+      const total = 
+        parseValue(pajakPenjual) +
+        parseValue(pajakPembeli) +
+        parseValue(pengecekanSertipikat) +
+        parseValue(aktaJualBeli) +
+        parseValue(daftarBalikNama) +
+        parseValue(validasi);
+      
+      return formatRupiah(total.toFixed(0));
+    } else if (activeTab === 'waris') {
+      // Total = Pajak Waris + Pengecekan Sertipikat + Daftar Balik Nama + Validasi
+      const total = 
+        parseValue(pajakWaris) +
+        parseValue(pengecekanSertipikatWaris) +
+        parseValue(daftarBalikNamaWaris) +
+        parseValue(validasiWaris);
+      
+      return formatRupiah(total.toFixed(0));
+    } else if (activeTab === 'hibah') {
+      // Total = Pajak Balik Nama Hibah + Pengecekan Sertipikat + Akta Hibah + Daftar Balik Nama + Validasi
+      const total = 
+        parseValue(pajakBalikNamaHibah) +
+        parseValue(pengecekanSertipikatHibah) +
+        parseValue(aktaHibah) +
+        parseValue(daftarBalikNamaHibah) +
+        parseValue(validasiHibah);
+      
+      return formatRupiah(total.toFixed(0));
     }
+    
     return '0';
   };
 
@@ -297,17 +283,13 @@ function App() {
                       <label>Akta Jual Beli</label>
                       <input type="text" value={aktaJualBeli} readOnly />
                     </div>
-                    <div className="total-field">
-                      <label>Total Biaya Resmi</label>
-                      <input type="text" value={calculateTotal('resmi')} readOnly />
-                    </div>
-                  </div>
-
-                  <div className="result-column">
                     <div className="form-field">
                       <label>Daftar Balik Nama</label>
                       <input type="text" value={daftarBalikNama} readOnly />
                     </div>
+                  </div>
+
+                  <div className="result-column">
                     <div className="form-field">
                       <label>Zona Nilai Tanah</label>
                       <input type="text" value={zonaNilaiTanah} readOnly />
@@ -321,8 +303,8 @@ function App() {
                       <input type="text" value={validasi} readOnly />
                     </div>
                     <div className="total-field">
-                      <label>Total Biaya Notaris</label>
-                      <input type="text" value={calculateTotal('notaris')} readOnly />
+                      <label>Total Biaya Pengurusan</label>
+                      <input type="text" value={calculateTotalPengurusan()} readOnly />
                     </div>
                   </div>
                 </div>
@@ -357,6 +339,10 @@ function App() {
                     <div className="form-field">
                       <label>Validasi</label>
                       <input type="text" value={validasiWaris} readOnly />
+                    </div>
+                    <div className="total-field">
+                      <label>Total Biaya Pengurusan</label>
+                      <input type="text" value={calculateTotalPengurusan()} readOnly />
                     </div>
                   </div>
                 </div>
@@ -399,6 +385,10 @@ function App() {
                     <div className="form-field">
                       <label>SKB</label>
                       <input type="text" value={skb} readOnly />
+                    </div>
+                    <div className="total-field">
+                      <label>Total Biaya Pengurusan</label>
+                      <input type="text" value={calculateTotalPengurusan()} readOnly />
                     </div>
                   </div>
                 </div>
