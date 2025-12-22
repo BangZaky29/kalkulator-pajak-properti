@@ -1,0 +1,5 @@
+Prosedur instalation pembuatan website 
+  - npm create vite@latest kalkulator-pph -- --template react
+  - cd kalkulator-pph
+  - npm install
+  - npm run dev 
