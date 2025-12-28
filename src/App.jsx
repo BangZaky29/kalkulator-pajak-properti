@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './App.css';
-import LogoNuansaLegal from './assets/BKWhite_nuansaLegal.jpeg';
+import LogoNuansaLegal from './assets/NS_white_01.png';
 
 
 function App() {
@@ -433,7 +433,7 @@ function App() {
         <div className="container">
           <div className="footer-bottom">
             <p>Kalkulator Pajak Properti - Hitung Pajak Penghasilan</p>
-            <p>&copy; 2025 nuansalegal.id. All rights reserved.</p>
+            <p>&copy; 2022 Nuansa Solution | All rights reserved.</p>
           </div>
         </div>
       </footer>
