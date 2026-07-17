@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './App.css';
-import LogoNuansaLegal from './assets/NS_white_01.png';
+import LogoNuansaLegal from './assets/LOGO-NUANSA-LEGAL.jpeg';
 
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
   const [njopValue, setNjopValue] = useState('');
   const [location, setLocation] = useState('Jakarta');
   const [activeTab, setActiveTab] = useState('jual-beli');
-  
+
   // Form states untuk Jual Beli Tanah
   const [pajakPenjual, setPajakPenjual] = useState('');
   const [pajakPembeli, setPajakPembeli] = useState('');
@@ -18,7 +18,7 @@ function App() {
   const [zonaNilaiTanah, setZonaNilaiTanah] = useState('');
   const [kasNegaraBN, setKasNegaraBN] = useState('');
   const [validasi, setValidasi] = useState('');
-  
+
   // Form states untuk Waris Tanah
   const [pajakWaris, setPajakWaris] = useState('');
   const [zonaNilaiTanahWaris, setZonaNilaiTanahWaris] = useState('');
@@ -26,7 +26,7 @@ function App() {
   const [kasNegaraBNWaris, setKasNegaraBNWaris] = useState('');
   const [daftarBalikNamaWaris, setDaftarBalikNamaWaris] = useState('');
   const [validasiWaris, setValidasiWaris] = useState('');
-  
+
   // Form states untuk Hibah
   const [pajakBalikNamaHibah, setPajakBalikNamaHibah] = useState('');
   const [kasNegaraBNHibah, setKasNegaraBNHibah] = useState('');
@@ -91,7 +91,7 @@ function App() {
     } else if (activeTab === 'waris') {
       // Perhitungan untuk Waris
       const pajakWarisValue = nilai * 0.025; // 2.5%
-      
+
       // Nilai Baku (Fixed Values)
       const sertipikatWaris = 850000;
       const validasiWarisValue = 1000000;
@@ -106,7 +106,7 @@ function App() {
     } else if (activeTab === 'hibah') {
       // Perhitungan untuk Hibah
       const pajakHibahValue = nilai * 0.05; // 5%
-      
+
       // Nilai Baku (Fixed Values)
       const sertipikatHibahValue = 850000;
       const validasiHibahValue = 1000000;
@@ -129,39 +129,39 @@ function App() {
       if (str === 'Belum diketahui!' || !str) return 0;
       return parseFloat(str.replace(/\./g, '')) || 0;
     };
-    
+
     if (activeTab === 'jual-beli') {
       // Total = Pajak Penjual + Pajak Pembeli + Pengecekan Sertipikat + Akta Jual Beli + Daftar Balik Nama + Validasi
-      const total = 
+      const total =
         parseValue(pajakPenjual) +
         parseValue(pajakPembeli) +
         parseValue(pengecekanSertipikat) +
         parseValue(aktaJualBeli) +
         parseValue(daftarBalikNama) +
         parseValue(validasi);
-      
+
       return formatRupiah(total.toFixed(0));
     } else if (activeTab === 'waris') {
       // Total = Pajak Waris + Pengecekan Sertipikat + Daftar Balik Nama + Validasi
-      const total = 
+      const total =
         parseValue(pajakWaris) +
         parseValue(pengecekanSertipikatWaris) +
         parseValue(daftarBalikNamaWaris) +
         parseValue(validasiWaris);
-      
+
       return formatRupiah(total.toFixed(0));
     } else if (activeTab === 'hibah') {
       // Total = Pajak Balik Nama Hibah + Pengecekan Sertipikat + Akta Hibah + Daftar Balik Nama + Validasi
-      const total = 
+      const total =
         parseValue(pajakBalikNamaHibah) +
         parseValue(pengecekanSertipikatHibah) +
         parseValue(aktaHibah) +
         parseValue(daftarBalikNamaHibah) +
         parseValue(validasiHibah);
-      
+
       return formatRupiah(total.toFixed(0));
     }
-    
+
     return '0';
   };
 

@@ -5,9 +5,9 @@
 }
 
 body {
-  font-family: 'Inter', 'Space Grotesk', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial;
+  font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial;
   background: var(--gradient-secondary);
-  color: var(--text-dark);
+  color: var(--text-body);
   min-height: 100vh;
 }
 
@@ -30,11 +30,11 @@ body {
 .header {
   background: var(--gradient-primary);
   height: 130px;
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e5bc22;
   padding: 12px 0;
   position: static;
   z-index: 100;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 12px rgba(253, 208, 37, 0.35);
 }
 
 .header .container {
@@ -61,9 +61,10 @@ body {
 }
 
 .header-text h1 {
+  font-family: 'Sen', 'Inter', ui-sans-serif, system-ui;
   font-size: 24px;
   font-weight: 800;
-  color: var(--text-dark);
+  color: var(--navy-deep);
   margin: 0;
   line-height: 1.1;
 }
@@ -71,7 +72,7 @@ body {
 .header-text .subtitle {
   font-size: 12px;
   margin: 0;
-  opacity: 0.95;
+  opacity: 0.9;
   color: var(--gray-700);
   max-width: 600px;
 }
@@ -85,13 +86,13 @@ body {
 
 .nav a {
   text-decoration: none;
-  color: var(--text-dark);
+  color: var(--navy-deep);
   font-weight: 500;
   transition: color 0.3s;
 }
 
 .nav a:hover {
-  color: var(--blue-700);
+  color: var(--navy-medium);
 }
 
 .language {
@@ -107,23 +108,24 @@ body {
 }
 
 .language span:hover {
-  background-color: #f0f0f0;
+  background-color: rgba(253, 208, 37, 0.3);
 }
 
 .language .active {
-  background-color: var(--blue-50);
+  background-color: rgba(253, 208, 37, 0.45);
   font-weight: bold;
+  color: var(--navy-deep);
 }
 
 .contact {
-  border: 1px solid var(--blue-600);
+  border: 1px solid var(--navy-deep);
   padding: 8px 16px;
   border-radius: 5px;
-  color: var(--blue-600) !important;
+  color: var(--navy-deep) !important;
 }
 
 .track-btn {
-  background-color: var(--blue-600);
+  background-color: var(--navy-deep);
   color: white !important;
   padding: 8px 16px;
   border-radius: 5px;
@@ -143,7 +145,7 @@ body {
 .hero-section {
   padding: 50px 20px 100px;
   text-align: center;
-  color: var(--text-dark);
+  color: var(--navy-deep);
   position: relative;
 }
 
@@ -154,33 +156,34 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: 
-    linear-gradient(45deg, rgba(255,255,255,0.03) 25%, transparent 25%),
-    linear-gradient(-45deg, rgba(255,255,255,0.03) 25%, transparent 25%),
-    linear-gradient(45deg, transparent 75%, rgba(255,255,255,0.03) 75%),
-    linear-gradient(-45deg, transparent 75%, rgba(255,255,255,0.03) 75%);
+  background-image:
+    linear-gradient(45deg, rgba(255, 255, 255, 0.05) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(255, 255, 255, 0.05) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, rgba(255, 255, 255, 0.05) 75%),
+    linear-gradient(-45deg, transparent 75%, rgba(255, 255, 255, 0.05) 75%);
   background-size: 50px 50px;
   opacity: 0.3;
 }
 
 .hero-section h1 {
+  font-family: 'Sen', 'Inter', ui-sans-serif, system-ui;
   font-size: 32px;
   font-weight: 800;
   margin-bottom: 6px;
   position: relative;
   z-index: 1;
   letter-spacing: 0.6px;
-  color: var(--text-dark);
+  color: var(--navy-deep);
 }
 
 .hero-section .subtitle {
   font-size: 16px;
-  opacity: 0.95;
+  opacity: 0.85;
   position: relative;
   z-index: 1;
   max-width: 700px;
   margin: 0 auto;
-  color: var(--text-muted);
+  color: var(--gray-700);
 }
 
 .container {
@@ -190,7 +193,7 @@ body {
 }
 
 /* ============================================
-   CALCULATOR CARD - FIXED LAYOUT
+   CALCULATOR CARD
 ============================================ */
 .calculator-card {
   background: white;
@@ -205,14 +208,14 @@ body {
 }
 
 .calculator-title {
+  font-family: 'Sen', 'Inter', ui-sans-serif, system-ui;
   font-size: 24px;
   font-weight: 700;
-  color: var(--text-dark);
+  color: var(--navy-deep);
   margin-bottom: 28px;
   text-align: center;
 }
 
-/* Input section dengan grid yang konsisten */
 .input-section {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -237,7 +240,7 @@ body {
 }
 
 .info-icon {
-  color: var(--blue-600);
+  color: var(--navy-deep);
   cursor: help;
   font-size: 16px;
 }
@@ -255,9 +258,9 @@ body {
 }
 
 .input-wrapper:focus-within {
-  border-color: var(--blue-600);
+  border-color: var(--yellow-primary);
   background-color: white;
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+  box-shadow: 0 0 0 3px rgba(253, 208, 37, 0.2);
 }
 
 .currency {
@@ -276,7 +279,7 @@ body {
   font-size: 15px;
   width: 100%;
   font-weight: 500;
-  color: var(--text-dark);
+  color: var(--text-body);
   height: 100%;
 }
 
@@ -300,7 +303,7 @@ body {
   cursor: pointer;
   width: 18px;
   height: 18px;
-  accent-color: var(--blue-500);
+  accent-color: var(--yellow-primary);
 }
 
 select {
@@ -312,7 +315,7 @@ select {
   cursor: pointer;
   transition: all 0.3s;
   font-weight: 500;
-  color: var(--text-dark);
+  color: var(--text-body);
   width: 100%;
   height: 50px;
   -webkit-appearance: none;
@@ -326,12 +329,11 @@ select {
 
 select:focus {
   outline: none;
-  border-color: var(--blue-600);
+  border-color: var(--yellow-primary);
   background-color: white;
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+  box-shadow: 0 0 0 3px rgba(253, 208, 37, 0.2);
 }
 
-/* Button container untuk posisi yang konsisten */
 .button-container {
   grid-column: 1 / -1;
   display: flex;
@@ -340,7 +342,7 @@ select:focus {
 }
 
 .hitung-btn {
-  background: var(--gradient-primary);
+  background: var(--navy-deep);
   color: white;
   border: none;
   padding: 14px 40px;
@@ -348,16 +350,17 @@ select:focus {
   font-size: 16px;
   font-weight: 700;
   cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  box-shadow: 0 6px 18px rgba(59, 130, 246, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  box-shadow: 0 6px 18px rgba(30, 58, 138, 0.35);
   height: 52px;
   white-space: nowrap;
   min-width: 180px;
 }
 
 .hitung-btn:hover {
+  background: var(--navy-medium);
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4);
+  box-shadow: 0 8px 22px rgba(30, 58, 138, 0.45);
 }
 
 .hitung-btn:active {
@@ -365,7 +368,7 @@ select:focus {
 }
 
 /* ============================================
-   RESULT SECTION - GRID KONSISTEN
+   RESULT SECTION
 ============================================ */
 .result-section {
   background: white;
@@ -378,9 +381,10 @@ select:focus {
 }
 
 .result-title {
+  font-family: 'Sen', 'Inter', ui-sans-serif, system-ui;
   font-size: 22px;
   font-weight: 700;
-  color: var(--text-dark);
+  color: var(--navy-deep);
   margin-bottom: 24px;
   text-align: center;
 }
@@ -391,12 +395,12 @@ select:focus {
   margin-bottom: 28px;
   border-bottom: 2px solid #e5e5e5;
   overflow-x: auto;
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 .tabs::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera */
+  display: none;
 }
 
 .tab {
@@ -416,12 +420,12 @@ select:focus {
 
 .tab:hover {
   background-color: var(--blue-100);
-  color: var(--text-dark);
+  color: var(--navy-deep);
 }
 
 .tab.active {
   background-color: var(--blue-200);
-  color: var(--text-dark);
+  color: var(--navy-deep);
 }
 
 .tab.active::after {
@@ -435,7 +439,7 @@ select:focus {
   border-radius: 3px;
 }
 
-/* Result grid layout konsisten */
+/* Result grid layout */
 .result-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -450,7 +454,7 @@ select:focus {
   margin: 10px;
 }
 
-/* Form field styling konsisten */
+/* Form field styling */
 .form-field {
   display: flex;
   flex-direction: column;
@@ -475,7 +479,7 @@ select:focus {
   background-color: #fff;
   font-size: 14px;
   font-weight: 600;
-  color: var(--text-dark);
+  color: var(--text-body);
   width: 100%;
   box-sizing: border-box;
   transition: 0.2s;
@@ -483,10 +487,10 @@ select:focus {
 }
 
 .form-field input:focus {
-  border-color: var(--blue-400);
+  border-color: var(--yellow-primary);
   background: #fff;
   outline: none;
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+  box-shadow: 0 0 0 3px rgba(253, 208, 37, 0.2);
 }
 
 .form-field input[value="Belum diketahui!"] {
@@ -504,22 +508,23 @@ select:focus {
 }
 
 .total-field label {
+  font-family: 'Sen', 'Inter', ui-sans-serif, system-ui;
   font-weight: 700;
   font-size: 15px;
-  color: #1b4332;
+  color: var(--navy-deep);
   margin-bottom: 8px;
   display: block;
 }
 
 .total-field input {
-  background: var (--blue-400);
-  border: 2px solid #2563EB;
+  background: #fffbeb;
+  border: 2px solid var(--navy-deep);
   font-weight: 700;
-  color: #1b4332;
+  color: var(--navy-deep);
   font-size: 17px;
   padding: 12px;
   border-radius: 8px;
-  box-shadow: 0 4px 12px #00c8ff40;
+  box-shadow: 0 4px 12px rgba(253, 208, 37, 0.3);
   width: 100%;
   height: 52px;
 }
@@ -534,9 +539,10 @@ select:focus {
 }
 
 .notes-section h3 {
+  font-family: 'Sen', 'Inter', ui-sans-serif, system-ui;
   font-size: 20px;
   margin-bottom: 20px;
-  color: #1b4332;
+  color: var(--navy-deep);
   font-weight: 700;
 }
 
@@ -548,9 +554,10 @@ select:focus {
 }
 
 .note-column h4 {
+  font-family: 'Sen', 'Inter', ui-sans-serif, system-ui;
   font-size: 16px;
   margin-bottom: 12px;
-  color: #2563EB;
+  color: var(--navy-deep);
   font-weight: 700;
 }
 
@@ -572,23 +579,24 @@ select:focus {
   content: '•';
   position: absolute;
   left: 0;
-  color: #2563EB;
+  color: var(--yellow-primary);
   font-weight: bold;
   font-size: 18px;
 }
 
 .disclaimer {
-  background-color: var(--blue-200);
+  background-color: #fffbeb;
   padding: 25px;
   border-radius: 10px;
-  border-left: 4px solid #93C5FD;
+  border-left: 4px solid var(--yellow-primary);
   margin-top: 25px;
 }
 
 .disclaimer h4 {
+  font-family: 'Sen', 'Inter', ui-sans-serif, system-ui;
   font-size: 16px;
   margin-bottom: 15px;
-  color: #1b4332;
+  color: var(--navy-deep);
 }
 
 .disclaimer p {
@@ -603,11 +611,12 @@ select:focus {
 }
 
 .disclaimer .highlight {
-  background-color: #93C5FD;
+  background-color: #fde68a;
   padding: 12px;
   border-radius: 6px;
   font-weight: 600;
   margin: 15px 0;
+  color: var(--navy-deep);
 }
 
 /* ============================================
@@ -615,7 +624,7 @@ select:focus {
 ============================================ */
 .footer {
   background: var(--gradient-primary);
-  color: var(--text-dark);
+  color: var(--navy-deep);
   padding: 50px 0 20px;
   margin-top: 60px;
 }
@@ -630,13 +639,13 @@ select:focus {
 .footer-logo img {
   height: 35px;
   margin-bottom: 15px;
-  filter: brightness(0) invert(1);
 }
 
 .footer-logo p {
   font-size: 13px;
   opacity: 0.8;
   line-height: 1.6;
+  color: var(--navy-deep);
 }
 
 .footer-links {
@@ -646,15 +655,16 @@ select:focus {
 }
 
 .footer-column h4 {
+  font-family: 'Sen', 'Inter', ui-sans-serif, system-ui;
   font-size: 15px;
   margin-bottom: 15px;
-  color: #95d5b2;
+  color: var(--navy-deep);
   font-weight: 700;
 }
 
 .footer-column a {
   display: block;
-  color: white;
+  color: var(--navy-deep);
   text-decoration: none;
   font-size: 13px;
   margin-bottom: 10px;
@@ -671,17 +681,19 @@ select:focus {
   font-size: 13px;
   margin-bottom: 8px;
   opacity: 0.8;
+  color: var(--navy-deep);
 }
 
 .footer-bottom {
   text-align: center;
   padding-top: 25px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(30, 58, 138, 0.2);
 }
 
 .footer-bottom p {
   font-size: 13px;
   opacity: 0.7;
+  color: var(--navy-deep);
 }
 
 /* ============================================
@@ -690,17 +702,18 @@ select:focus {
 
 /* Tablet (768px - 1024px) */
 @media (max-width: 1024px) {
+
   .calculator-card,
   .result-section {
     max-width: 90%;
     padding: 28px;
   }
-  
+
   .input-section {
     grid-template-columns: 1fr;
     gap: 20px;
   }
-  
+
   .notes-content {
     grid-template-columns: 1fr;
     gap: 25px;
@@ -712,68 +725,68 @@ select:focus {
   .hero-section {
     padding: 40px 20px 80px;
   }
-  
+
   .hero-section h1 {
     font-size: 24px;
   }
-  
+
   .hero-section .subtitle {
     font-size: 14px;
   }
-  
+
   .calculator-card {
     padding: 24px 20px;
     margin: -60px auto 25px;
     border-radius: 14px;
   }
-  
+
   .calculator-title,
   .result-title {
     font-size: 20px;
   }
-  
+
   .header .container {
     flex-direction: column;
     text-align: center;
     gap: 10px;
   }
-  
+
   .header-text h1 {
     font-size: 20px;
   }
-  
+
   .nav {
     display: none;
   }
-  
+
   .result-section {
     padding: 24px 20px;
     border-radius: 14px;
   }
-  
+
   .tabs {
     margin-bottom: 20px;
   }
-  
+
   .tab {
     padding: 10px 16px;
     font-size: 14px;
   }
-  
+
   .button-container {
     margin-top: 20px;
   }
-  
+
   .hitung-btn {
     width: 100%;
     padding: 14px 20px;
   }
-  
+
   .footer-content {
     grid-template-columns: 1fr;
     gap: 30px;
   }
-  
+
   .footer-links {
     grid-template-columns: 1fr;
     gap: 20px;
@@ -785,62 +798,62 @@ select:focus {
   .header {
     height: 220px;
   }
+
   .hero-section {
     padding: 70px 15px 70px;
   }
-  
+
   .hero-section h1 {
     font-size: 20px;
   }
-  
+
   .hero-section .subtitle {
     font-size: 13px;
   }
-  
+
   .calculator-card {
     padding: 20px 16px;
     margin: -50px auto 20px;
     border-radius: 12px;
   }
-  
+
   .input-group label {
     font-size: 13px;
   }
-  
+
   .input-wrapper,
   select {
     height: 46px;
   }
-  
+
   .result-section {
     padding: 20px 16px;
     border-radius: 12px;
   }
 
-  
   .form-field input {
     height: 44px;
     font-size: 13px;
     padding: 10px 12px;
   }
-  
+
   .total-field input {
     height: 48px;
     font-size: 16px;
   }
-  
+
   .notes-section h3 {
     font-size: 18px;
   }
-  
+
   .disclaimer {
     padding: 18px;
   }
-  
+
   .disclaimer h4 {
     font-size: 15px;
   }
-  
+
   .disclaimer p {
     font-size: 13px;
   }
@@ -848,20 +861,21 @@ select:focus {
 
 /* Extra small devices (≤ 360px) */
 @media (max-width: 360px) {
+
   .calculator-card,
   .result-section {
     padding: 18px 14px;
   }
-  
+
   .tab {
     padding: 8px 12px;
     font-size: 13px;
   }
-  
+
   .radio-group {
     gap: 12px;
   }
-  
+
   .radio-group label {
     font-size: 13px;
   }
